@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ClassComponent from "./components/ClassComponents";
+import FuntionalComponents from "./components/FunctionalComponents";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  const company = "TCS";
+
+  const [name, setName] = useState("Zubair");
+
+  return (<div className="App">
+    <h1>Class Component</h1>
+    <ClassComponent />
+    <br />
+    <h1>Functional Components</h1>
+    <FuntionalComponents name={name} age={20} company={company} setName={setName} />
+  </div>
   );
-}
+};
 
 export default App;
